@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        // - Створити змінні. Присвоїти кожному з них значення: 'hello','owu','com', 'ua', 1, 10, -999, 123, 3.14, 2.7, 16, true, false.
+        //     Вивести кожну змінну за допомогою: console.log , alert, document.write
+        // let a = 'hello';
+        // console.log(a);
+        // alert(a);
+        // document.write(a);
+        // let b = 'owu';
+        // console.log(b);
+        // alert(b);
+        // document.write(b);
+        // let c = 'com';
+        // console.log(c);
+        // alert(c);
+        // document.write(c);
+        // let d = 'ua';
+        // console.log(d);
+        // alert(d);
+        // document.write(d);
+        // let e = 1;
+        // console.log(e);
+        // alert(e);
+        // document.write(e);
+        // let f = 10;
+        // console.log(f);
+        // alert(f);
+        // document.write(f);
+        // let g = -999;
+        // console.log(g);
+        // alert(g);
+        // document.write(g);
+        // let h = 123;
+        // console.log(h);
+        // alert(h);
+        // document.write(h);
+        // let i = 3.14;
+        // console.log(i);
+        // alert(i);
+        // document.write(i);
+        // let j = 2.7;
+        // console.log(j);
+        // alert(j);
+        // document.write(j);
+        // let k = 16;
+        // console.log(k);
+        // alert(k);
+        // document.write(k);
+        // let l = true;
+        // console.log(l);
+        // alert(l);
+        // document.write(l);
+        // let m = false;
+        // console.log(m);
+        // alert(m);
+        // document.write(m);
+        // - Переприсвоїти кожній змінній з завдання значення на довільне.
+        //     Вивести кожну змінну за допомогою: console.log , alert, document.write
+        // a = 'bye';
+        // console.log(a);
+        // alert(a);
+        // document.write(a);
+        // b = 'world';
+        // console.log(b);
+        // alert(b);
+        // document.write(b);
+        // c = 'hello';
+        // console.log(c);
+        // alert(c);
+        // document.write(c);
+        // d = 'okten';
+        // console.log(d);
+        // alert(d);
+        // document.write(d);
+        // e = 25;
+        // console.log(e);
+        // alert(e);
+        // document.write(e);
+        // f = 14;
+        // console.log(f);
+        // alert(f);
+        // document.write(f);
+        // g = -96;
+        // console.log(g);
+        // alert(g);
+        // document.write(g);
+        // h = -85;
+        // console.log(h);
+        // alert(h);
+        // document.write(h);
+        // i = 5.7;
+        // console.log(i);
+        // alert(i);
+        // document.write(i);
+        // j = 8.759;
+        // console.log(j);
+        // alert(j);
+        // document.write(j);
+        // k = 2;
+        // console.log(k);
+        // alert(k);
+        // document.write(k);
+        // l = false;
+        // console.log(l);
+        // alert(l);
+        // document.write(l);
+        // m = true;
+        // console.log(m);
+        // alert(m);
+        // document.write(m);
+        // - Створити 3 змінних firstName, middleName, lastName, наповнити їх своїм ПІБ.
+        //      З'єднати їх в одну змінну person. (Не об'єкт)
+        // let firstName = 'Назарій';
+        // let middleName = 'Вадимович';
+        // let lastName = 'Штиюк';
+        // let fullName = `${firstName} ${middleName} ${lastName}`;
+        // - За допомогою 3х різних prompt() отримати 3 слова які являються вашими Імям, По-Батькові та роками.
+        //     Вивести "Вітаю *Імя* *По батькові*. Тобі *вік* років".
+        // let userName = prompt("Введіть своє ім'я:");
+        // let userMiddleName = prompt("Введіть по-баькові:");
+        // let userAge = prompt("Скільки вам років:");
+        // document.write(`Вітаю ${userName} ${userMiddleName}. Тобі ${userAge} років`);
+        // - За допомогою оператора typeof визначити типи наступних змінних та вивести їх в консоль.
+        //     let a = 100; let b = '100'; let c = true;
+        // let a = 100;
+        // let b = '100';
+        // let c = true;
+        // console.log(typeof(a));
+        // console.log(typeof(b));
+        // console.log(typeof(c));
+        // - Визначити відповідний оператор в виразах що б вийшов відповідний результат.
+        //     В однакових виразах не використовувати однакові оператори!!!
+        // 5 < 6 -> true
+        // 5 > 6 -> false
+        // 5 == 6 -> false
+        // 5 === 6 -> false
+        // 10 == 10 -> true
+        // 10 === 10 -> true
+        // 10 > 10 -> false
+        // 10 != 10 -> false
+        // 10 !== 10 -> false
+        // 123 === '123' -> false
+        // 123 == '123' -> true
+        // - Подумайте Какие значения выведет в окно браузера следующий фрагмент кода?  и почему?
+        //     let str = "20";
+        // let a = 5;
+        //(1) document.write(str + a + "<br/>"); Конкантинація рядків, при сумі строкі і числа, обидва перетворюються в
+        //(2) document.write(str - a + "<br/>"); строку, а у ніших випадках перетворюється в числа, тому:
+        //(3) document.write(str * "2" + "<br/>"); (1) - 205; (2) - 15; (3) - 40; (4) - 10;
+        //(4) document.write(str / 2 + "<br/>");
+    </script>
+
+</body>
+</html>
