@@ -51,11 +51,12 @@
     let arr = [];
     let recursive = (firstElement) => {
         for (let element of firstElement.children) {
-          if (!(element.className !== '')) {
-            recursive(element);
-          } else {
-            arr.push(element.className);
+          if (element.className !== '') {
+            for (let i = 0; i < element.classList.length; i++) {
+              arr.push(element.classList[i]);
+            }
           }
+          recursive(element);
         }
     }
     recursive(firstElement);
