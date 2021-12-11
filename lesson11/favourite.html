@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let favourite = JSON.parse(localStorage.getItem('Favourite'));
+        for (let element of favourite) {
+            let div = document.createElement('div');
+            let h2 = document.createElement('h2');
+            let hr = document.createElement('hr');
+            h2.innerText = `Name: ${element.name}, Age: ${element.age}, Married: ${element.status}`;
+            div.appendChild(h2);
+            div.appendChild(hr);
+            document.body.appendChild(div);
+        }
+    </script>
+</body>
+</html>
