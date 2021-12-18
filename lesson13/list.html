@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let  items = JSON.parse(localStorage.getItem('items'));
+        document.body.style.display = 'flex';
+        document.body.style.flexWrap = 'wrap';
+        console.log(items);
+        for (let item of items) {
+            let div = document.createElement('div');
+            div.style.textAlign = 'center';
+            div.style.border = '1px solid #111';
+            div.style.width = '18%';
+            div.style.margin = '0.5%';
+            div.style.padding = '0.4%';
+            div.innerHTML = `<img src="${item.photoItem}" width="99%">
+                            <h2>${item.nameItem}</h2>
+                            <h3>Количество: ${item.countItem}</h3>
+                            <h4>Цена: ${item.priceItem}</h4>`;
+            let deleteElement = document.createElement('button');
+            deleteElement.innerText = 'Удалить';
+            deleteElement.onclick = function (e) {
+                e.preventDefault();
+                div.style.display = 'none';
+            }
+
+            div.appendChild(deleteElement);
+            document.body.appendChild(div);
+        }
+
+        let deleteAll = document.createElement('button');
+        deleteAll.innerText = 'Удалить всё!';
+        deleteAll.onclick = function () {
+            console.log(items);
+            localStorage.removeItem('items');
+            window.location.reload();
+        }
+        document.body.appendChild(deleteAll);
+
+    </script>
+</body>
+</html>
