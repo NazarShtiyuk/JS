@@ -6,11 +6,11 @@
 </head>
 <body>
     <script>
-        let  items = JSON.parse(localStorage.getItem('items'));
+        let items = JSON.parse(localStorage.getItem('items'));
         document.body.style.display = 'flex';
         document.body.style.flexWrap = 'wrap';
         console.log(items);
-        for (let item of items) {
+        for (let [i, item] of items.entries()) {
             let div = document.createElement('div');
             div.style.textAlign = 'center';
             div.style.border = '1px solid #111';
@@ -25,7 +25,9 @@
             deleteElement.innerText = 'Удалить';
             deleteElement.onclick = function (e) {
                 e.preventDefault();
+                items.splice(i, 1);
                 div.style.display = 'none';
+                localStorage.setItem('items', JSON.stringify(items));
             }
 
             div.appendChild(deleteElement);

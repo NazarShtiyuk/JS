@@ -1,20 +1,16 @@
 // let button = document.getElementsByTagName('button');
 let formItem = document.forms['formItem'];
 let itemsArr = [];
-
+localStorage.setItem('items', JSON.stringify(itemsArr));
 formItem.btn.onclick = function (e) {
     let item = {
-        nameItem: '',
-        countItem: 0,
-        priceItem: 0,
-        photoItem: ''
+        nameItem: formItem.name.value,
+        countItem: formItem.count.value,
+        priceItem: formItem.price.value,
+        photoItem: formItem.photo.value
     }
     e.preventDefault();
-    item.nameItem = formItem.name.value;
-    item.countItem = formItem.count.value;
-    item.priceItem = formItem.price.value;
-    item.photoItem = formItem.photo.value;
+    itemsArr = JSON.parse(localStorage.getItem('items'));
     itemsArr.push(item);
-    console.log(itemsArr);
     localStorage.setItem('items', JSON.stringify(itemsArr));
 }
