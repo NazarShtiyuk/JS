@@ -25,7 +25,7 @@
             deleteElement.innerText = 'Удалить';
             deleteElement.onclick = function (e) {
                 e.preventDefault();
-                items.splice(i, 1);
+                items.splice(items[i], 1);
                 div.style.display = 'none';
                 localStorage.setItem('items', JSON.stringify(items));
             }
