@@ -39,7 +39,7 @@ function getBreakfast() {
 function goWork() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            let money = 50;
+            let money = 150;
             console.log('Приїхав на роботу');
             resolve(money);
         }, 3000)
@@ -78,24 +78,65 @@ function goToBed() {
     })
 }
 
+//                              async
+// async function myDay() {
+//     try {
+//         let task1 = await getUp(true);
+//         let task2 = await getBrushTeeth(task1);
+//         console.log(task2);
+//         let task3 = await getWashIn();
+//         console.log(task3);
+//         let task4 = await getBreakfast();
+//         console.log(task4);
+//         let task5 = await goWork();
+//         let task6 = await getLunch(task5);
+//         console.log(task6);
+//         let task7 = await goHome();
+//         console.log(task7);
+//         let task8 = await doHomework();
+//         console.log(task8);
+//         let task9 = await goToBed();
+//         console.log(task9);
+//     } catch (e) {
+//         console.error(e);
+//     }
+// }
+// myDay();
 
 
-async function myDay() {
-    let task1 = await getUp(true);
-    let task2 = await getBrushTeeth(task1);
-    console.log(task2);
-    let task3 = await getWashIn();
-    console.log(task3);
-    let task4 = await getBreakfast();
-    console.log(task4);
-    let task5 = await goWork();
-    let task6 = await getLunch(task5);
-    console.log(task6);
-    let task7 = await goHome();
-    console.log(task7);
-    let task8 = await doHomework();
-    console.log(task8);
-    let task9 = await goToBed();
-    console.log(task9);
-}
-myDay();
+//                      promise then
+// getUp(true)
+//     .then(task1 => {
+//         return getBrushTeeth(task1);
+//     })
+//     .then(task2 => {
+//         console.log(task2);
+//         return getWashIn()
+//     })
+//     .then(task3 => {
+//         console.log(task3);
+//         return getBreakfast();
+//     })
+//     .then(task4 => {
+//         console.log(task4);
+//         return goWork();
+//     })
+//     .then(task5 => {
+//         return getLunch(task5);
+//     })
+//     .then(task6 => {
+//         console.log(task6);
+//         return goHome();
+//     })
+//     .then(task7 => {
+//         console.log(task7);
+//         return doHomework();
+//     })
+//     .then(task8 => {
+//         console.log(task8);
+//         return goToBed();
+//     })
+//     .then(task9 => {
+//         console.log(task9);
+//     })
+
