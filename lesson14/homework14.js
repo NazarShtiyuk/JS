@@ -161,7 +161,6 @@ function getUp(ifGetUp, callback) {
     setTimeout(() => {
         if (ifGetUp) {
             console.log('Прокинувся');
-            return true
         } else {
             return console.log('i`m sleep')
         }
