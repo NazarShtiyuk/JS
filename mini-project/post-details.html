@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+    <script>
+        let post = JSON.parse(localStorage.getItem('post'));
+        let divPost = document.createElement('div');
+        let h3Post = document.createElement('h3');
+        let h4Post = document.createElement('h4');
+        let pPost = document.createElement('p');
+        let buttonPost = document.createElement('button');
+        let divComments = document.createElement('div');
+        divComments.style.display = 'flex';
+        divComments.style.flexWrap = 'wrap';
+        divPost.style.width = '75%';
+        divPost.style.background = '#9ACD32';
+        divPost.style.border = '1px solid #FF0000';
+        divPost.style.margin = 'auto';
+        divPost.style.padding = '1%';
+        divPost.style.textAlign = 'center';
+        h3Post.innerText = `UserID: ${post.userId} - PostID: ${post.id}`;
+        h4Post.innerText = `${post.title}`;
+        pPost.innerText = `${post.body}`;
+        buttonPost.innerText = 'See comments';
+        buttonPost.onclick = function (e) {
+            e.preventDefault();
+            buttonPost.disabled = true;
+            fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}/comments`)
+                .then(comments => comments.json())
+                .then(comments => {
+                    for (let comment of comments) {
+                        let divComment = document.createElement('div');
+                        let h3Comment = document.createElement('h3');
+                        let h4Comment = document.createElement('h4');
+                        let h5Comment = document.createElement('h5');
+                        let pComment = document.createElement('p');
+                        divComment.style.width = '20%';
+                        divComment.style.background = '#00FFFF';
+                        divComment.style.border = '1px solid green';
+                        divComment.style.margin = '1.4%';
+                        divComment.style.padding = '1%'
+                        h3Comment.innerText = `UserID: ${comment.postId} - PostID: ${comment.id}`;
+                        h3Comment.style.textDecoration = 'underline';
+                        h4Comment.innerText = `${comment.name}`;
+                        h5Comment.innerText = `Email: ${comment.email}`;
+                        h5Comment.style.color = 'blue';
+                        pComment.innerText = `${comment.body}`;
+
+                        divComment.append(h3Comment, h4Comment, h5Comment, pComment);
+                        divComments.append(divComment);
+                    }
+                })
+        }
+        divPost.append(h3Post, h4Post, pPost, buttonPost, divComments);
+        document.body.append(divPost);
+    </script>
+</body>
+</html>

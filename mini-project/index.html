@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(users => users.json())
+            .then(users => {
+                document.body.style.display = 'flex';
+                document.body.style.flexWrap = 'wrap';
+                for (let user of users) {
+                    // console.log(user)
+                    let divUser = document.createElement('div');
+                    let buttonUser = document.createElement('button');
+                    divUser.style.width = '48%';
+                    divUser.style.border = '1px solid blue';
+                    divUser.style.margin = '0.5%';
+                    divUser.style.padding = '0.4%';
+                    divUser.style.background = '#00FA9A';
+                    divUser.style.textAlign = 'center';
+                    divUser.innerHTML = `<h3>ID: ${user.id}, ${user.name} ${user.username}</h3>`;
+                    buttonUser.innerHTML = 'See details';
+                    buttonUser.onclick = function () {
+                        window.location.href = 'user-details.html';
+                        localStorage.setItem('user', JSON.stringify(user));
+                    }
+
+                    divUser.appendChild(buttonUser);
+                    document.body.appendChild(divUser);
+                }
+            })
+    </script>
+</body>
+</html>
